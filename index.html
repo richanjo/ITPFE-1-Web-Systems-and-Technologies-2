@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPFE 1 – Web Systems and Technologies 2 | Quiz & Laboratory Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="h-full text-slate-800 bg-slate-100 font-sans flex flex-col antialiased">
+
+    <!-- Top Fixed Header -->
+    <header class="bg-slate-900 text-white shadow-md sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-brand-600 p-2 rounded-lg text-white font-bold flex items-center justify-center w-10 h-10 shadow">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 2.21 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-tight text-white leading-tight">ITPFE 1 – Web Systems and Technologies 2</h1>
+                    <p class="text-xs text-slate-400">Faculty: <span class="text-slate-200 font-medium">Rich Anjo Capiloyan</span> | Quiz Portal</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Complete this Quiz</h2>
+            <p class="text-sm text-slate-500 mt-2">ITPFE 1 – Web Systems and Technologies 2 · Quizzes #1–#3 Available</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+            <!-- Quiz #1 : AVAILABLE -->
+            <div id="quiz1Card" role="button" tabindex="0" onclick="tryOpenQuiz1()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tryOpenQuiz1();}" class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col justify-between transition hover:shadow-lg hover:border-brand-500 cursor-pointer" title="Open Quiz #1">
+                <div>
+                    <span class="inline-block bg-emerald-100 text-emerald-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-200">Available</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-3">Quiz #1</h3>
+                    <p class="text-xs text-slate-500 mt-1">25 items · Bootstrap 5 Responsive Web Development</p>
+                    <p class="text-[11px] text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-2.5 py-1.5 mt-3">Open now · No unlock required</p>
+                    <p class="text-[11px] font-medium text-slate-500 mt-2">Deadline: Dec 4, 2026 · 11:59 PM (PHT) · <span id="quiz1Status" class="font-semibold text-emerald-700">Submission Open</span></p>
+                </div>
+                <div class="mt-6">
+                    <button id="quiz1StartBtn" type="button" onclick="event.stopPropagation(); tryOpenQuiz1();" class="w-full inline-flex items-center justify-center gap-2 bg-brand-600 group-hover:bg-brand-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow-md transition text-sm">
+                        Start Quiz #1
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                    <p id="quiz1ClosedMessage" aria-live="polite" class="hidden w-full text-sm font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-4 py-2.5">Submission Closed – Deadline Has Passed</p>
+                </div>
+            </div>
+
+            <!-- Quiz #2 : AVAILABLE -->
+            <div id="quiz2Card" role="button" tabindex="0" onclick="tryOpenQuiz2()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tryOpenQuiz2();}" class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col justify-between transition hover:shadow-lg hover:border-brand-500 cursor-pointer" title="Open Quiz #2">
+                <div>
+                    <span class="inline-block bg-emerald-100 text-emerald-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-200">Available</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-3">Quiz #2</h3>
+                    <p class="text-xs text-slate-500 mt-1">15 items · Laravel Controllers, Routing, Blade & Form Security</p>
+                    <p class="text-[11px] text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-2.5 py-1.5 mt-3">Open now · No unlock required</p>
+                    <p class="text-[11px] font-medium text-slate-500 mt-2">Deadline: Dec 4, 2026 · 11:59 PM (PHT) · <span id="quiz2Status" class="font-semibold text-emerald-700">Submission Open</span></p>
+                </div>
+                <div class="mt-6">
+                    <button id="quiz2StartBtn" type="button" onclick="event.stopPropagation(); tryOpenQuiz2();" class="w-full inline-flex items-center justify-center gap-2 bg-brand-600 group-hover:bg-brand-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow-md transition text-sm">
+                        Start Quiz #2
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                    <p id="quiz2ClosedMessage" aria-live="polite" class="hidden w-full text-sm font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-4 py-2.5">Submission Closed – Deadline Has Passed</p>
+                </div>
+            </div>
+
+            <!-- Quiz #3 : AVAILABLE -->
+            <div id="quiz3Card" role="button" tabindex="0" onclick="tryOpenQuiz3()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tryOpenQuiz3();}" class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col justify-between transition hover:shadow-lg hover:border-brand-500 cursor-pointer" title="Open Quiz #3">
+                <div>
+                    <span class="inline-block bg-emerald-100 text-emerald-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-200">Available</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-3">Quiz #3</h3>
+                    <p class="text-xs text-slate-500 mt-1">15 items · Laravel Active Records and Pagination</p>
+                    <p class="text-[11px] text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-2.5 py-1.5 mt-3">Open now · No unlock required</p>
+                    <p class="text-[11px] font-medium text-slate-500 mt-2">Deadline: Dec 4, 2026 · 11:59 PM (PHT) · <span id="quiz3Status" class="font-semibold text-emerald-700">Submission Open</span></p>
+                </div>
+                <div class="mt-6">
+                    <button id="quiz3StartBtn" type="button" onclick="event.stopPropagation(); tryOpenQuiz3();" class="w-full inline-flex items-center justify-center gap-2 bg-brand-600 group-hover:bg-brand-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow-md transition text-sm">
+                        Start Quiz #3
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                    <p id="quiz3ClosedMessage" aria-live="polite" class="hidden w-full text-sm font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-4 py-2.5">Submission Closed – Deadline Has Passed</p>
+                </div>
+            </div>
+
+            <!-- Laboratory Activities Divider -->
+            <div class="sm:col-span-2 lg:col-span-3 flex items-center gap-3 pt-2" aria-hidden="true">
+                <span class="h-px flex-1 bg-slate-200"></span>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">Laboratory Activities-LARAVEL FRAMEWORK</h3>
+                <span class="h-px flex-1 bg-slate-200"></span>
+            </div>
+
+            <!-- Lab 1 -->
+            <div class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col justify-between transition hover:shadow-lg hover:border-violet-400">
+                <div>
+                    <span class="inline-block bg-violet-100 text-violet-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-violet-200">Laboratory Activity 1</span>
+                    <p class="text-[11px] font-medium text-slate-500 mt-2">Deadline: Dec 4, 2026 · 11:59 PM (PHT) · <span id="lab1Status" class="font-semibold text-emerald-700">Submission Open</span></p>
+                    <h3 class="text-xl font-bold text-slate-900 mt-3 leading-snug">Lab 1: Create Registration and Login Pages Using PHP</h3>
+                    <ul class="mt-3 space-y-2">
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Develop a registration and login module using PHP.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>The system must be designed for a Faculty Evaluation System.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Include user registration, login validation, and session management.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Upload screenshots showing the completed registration and login pages.</span></li>
+                    </ul>
+                </div>
+                <div class="mt-6">
+                    <a id="lab1SubmitBtn" href="https://drive.google.com/drive/folders/13fM63DbzlRlTJYurMQnqxH268DJwGTZO?usp=sharing" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow-md transition text-sm">
+                        Submit Lab Output
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5h5v5m0-5l-7 7m7-5a9 9 0 11-2.64-6.36L19 10"></path></svg>
+                    </a>
+                    <p id="lab1ClosedMessage" aria-live="polite" class="hidden w-full text-sm font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-4 py-2.5">Submission Closed – Deadline Has Passed</p>
+                </div>
+            </div>
+
+            <!-- Lab 2 -->
+            <div class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col justify-between transition hover:shadow-lg hover:border-violet-400">
+                <div>
+                    <span class="inline-block bg-violet-100 text-violet-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-violet-200">Laboratory Activity 2</span>
+                    <p class="text-[11px] font-medium text-slate-500 mt-2">Deadline: Dec 4, 2026 · 11:59 PM (PHT) · <span id="lab2Status" class="font-semibold text-emerald-700">Submission Open</span></p>
+                    <h3 class="text-xl font-bold text-slate-900 mt-3 leading-snug">Lab 2: Build the Faculty Evaluation Form</h3>
+                    <ul class="mt-3 space-y-2">
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>This is a continuation of Lab 1.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>After successfully logging in, the user should be redirected to the Faculty Evaluation Form.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Develop the evaluation form with appropriate questions, input fields, and submission functionality.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Upload screenshots showing the completed evaluation form.</span></li>
+                    </ul>
+                </div>
+                <div class="mt-6">
+                    <a id="lab2SubmitBtn" href="https://drive.google.com/drive/folders/1DBck-7nOh8ZGmpuLJKnsCxbxZWZIdtE5?usp=sharing" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow-md transition text-sm">
+                        Submit Lab Output
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5h5v5m0-5l-7 7m7-5a9 9 0 11-2.64-6.36L19 10"></path></svg>
+                    </a>
+                    <p id="lab2ClosedMessage" aria-live="polite" class="hidden w-full text-sm font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-4 py-2.5">Submission Closed – Deadline Has Passed</p>
+                </div>
+            </div>
+
+            <!-- Lab 3 -->
+            <div class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col justify-between transition hover:shadow-lg hover:border-violet-400">
+                <div>
+                    <span class="inline-block bg-violet-100 text-violet-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-violet-200">Laboratory Activity 3</span>
+                    <p class="text-[11px] font-medium text-slate-500 mt-2">Deadline: Dec 4, 2026 · 11:59 PM (PHT) · <span id="lab3Status" class="font-semibold text-emerald-700">Submission Open</span></p>
+                    <h3 class="text-xl font-bold text-slate-900 mt-3 leading-snug">Lab 3: Faculty Evaluation Admin Dashboard</h3>
+                    <ul class="mt-3 space-y-2">
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Develop an administrative dashboard for the Faculty Evaluation System.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Display submitted faculty evaluation results.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Include functionality to view and print individual users' faculty evaluation results.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Ensure that the administrator can select a faculty evaluation result and generate a printable report.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Upload screenshots of the admin dashboard and printed evaluation results.</span></li>
+                    </ul>
+                </div>
+                <div class="mt-6">
+                    <a id="lab3SubmitBtn" href="https://drive.google.com/drive/folders/1yUaQxzRq9wCQGjAKnxjuqzMLAMpG_4D9?usp=drive_link" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow-md transition text-sm">
+                        Submit Lab Output
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5h5v5m0-5l-7 7m7-5a9 9 0 11-2.64-6.36L19 10"></path></svg>
+                    </a>
+                    <p id="lab3ClosedMessage" aria-live="polite" class="hidden w-full text-sm font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-4 py-2.5">Submission Closed – Deadline Has Passed</p>
+                </div>
+            </div>
+
+            <!-- Lab 4 -->
+            <div class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col justify-between transition hover:shadow-lg hover:border-violet-400">
+                <div>
+                    <span class="inline-block bg-violet-100 text-violet-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-violet-200">Laboratory Activity 4</span>
+                    <p class="text-[11px] font-medium text-slate-500 mt-2">Deadline: Dec 4, 2026 · 11:59 PM (PHT) · <span id="lab4Status" class="font-semibold text-emerald-700">Submission Open</span></p>
+                    <h3 class="text-xl font-bold text-slate-900 mt-3 leading-snug">Lab 4: Create Your Portfolio Website</h3>
+                    <ul class="mt-3 space-y-2">
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Develop a personal portfolio website showcasing your profile, skills, projects, and other relevant information.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Upload screenshots of your completed portfolio website.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Upload and publish your project on GitHub.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Ensure that the GitHub repository is accessible through a public link.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Include the GitHub repository URL and live website URL, if available.</span></li>
+                    </ul>
+                </div>
+                <div class="mt-6">
+                    <a id="lab4SubmitBtn" href="https://drive.google.com/drive/folders/1eHKF6WhGRyApaIioftV2zaK-xLK5MAeg?usp=drive_link" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow-md transition text-sm">
+                        Submit Lab Output
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5h5v5m0-5l-7 7m7-5a9 9 0 11-2.64-6.36L19 10"></path></svg>
+                    </a>
+                    <p id="lab4ClosedMessage" aria-live="polite" class="hidden w-full text-sm font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-4 py-2.5">Submission Closed – Deadline Has Passed</p>
+                </div>
+            </div>
+
+            <!-- Lab 5 -->
+            <div class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col justify-between transition hover:shadow-lg hover:border-violet-400">
+                <div>
+                    <span class="inline-block bg-violet-100 text-violet-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-violet-200">Laboratory Activity 5</span>
+                    <p class="text-[11px] font-medium text-slate-500 mt-2">Deadline: Dec 4, 2026 · 11:59 PM (PHT) · <span id="lab5Status" class="font-semibold text-emerald-700">Submission Open</span></p>
+                    <h3 class="text-xl font-bold text-slate-900 mt-3 leading-snug">Lab 5: Web Application Proposal</h3>
+                    <ul class="mt-3 space-y-2">
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Provide a button to create a dedicated folder for the submission.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Allow students to upload their presentation slides in image/photo format.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Organize uploaded presentation images inside the created folder.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Allow students to view their uploaded images.</span></li>
+                    </ul>
+                </div>
+                <div class="mt-6">
+                    <a id="lab5SubmitBtn" href="https://drive.google.com/drive/folders/1UF3pd4osPbPhufum3VSrkUcxVnqjsLQu?usp=drive_link" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow-md transition text-sm">
+                        Submit Lab Output
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5h5v5m0-5l-7 7m7-5a9 9 0 11-2.64-6.36L19 10"></path></svg>
+                    </a>
+                    <p id="lab5ClosedMessage" aria-live="polite" class="hidden w-full text-sm font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-4 py-2.5">Submission Closed – Deadline Has Passed</p>
+                </div>
+            </div>
+
+            <!-- Lab 6 -->
+            <div class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col justify-between transition hover:shadow-lg hover:border-violet-400">
+                <div>
+                    <span class="inline-block bg-violet-100 text-violet-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-violet-200">Laboratory Activity 6</span>
+                    <p class="text-[11px] font-medium text-slate-500 mt-2">Deadline: Dec 4, 2026 · 11:59 PM (PHT) · <span id="lab6Status" class="font-semibold text-emerald-700">Submission Open</span></p>
+                    <h3 class="text-xl font-bold text-slate-900 mt-3 leading-snug">Lab 6: Project Web Design Prototype</h3>
+                    <ul class="mt-3 space-y-2">
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Provide a button to create a dedicated folder for the submission.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Allow students to upload screenshots or images of their web design prototype.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Organize uploaded prototype images inside the created folder.</span></li>
+                        <li class="flex gap-2 text-xs text-slate-600"><svg class="w-3.5 h-3.5 mt-0.5 shrink-0 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Allow students to view their uploaded images.</span></li>
+                    </ul>
+                </div>
+                <div class="mt-6">
+                    <a id="lab6SubmitBtn" href="https://drive.google.com/drive/folders/1A9HCC5Zkz0ZQyZhspm6kVPUtt2rhai1S?usp=drive_link" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow-md transition text-sm">
+                        Submit Lab Output
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5h5v5m0-5l-7 7m7-5a9 9 0 11-2.64-6.36L19 10"></path></svg>
+                    </a>
+                    <p id="lab6ClosedMessage" aria-live="polite" class="hidden w-full text-sm font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-4 py-2.5">Submission Closed – Deadline Has Passed</p>
+                </div>
+            </div>
+
+            <div id="finalProjectCard" class="sm:col-span-2 lg:col-span-3 bg-white rounded-2xl shadow-sm border border-brand-200 p-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <span class="inline-block bg-brand-50 text-brand-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-brand-100">Final Project</span>
+                        <span class="text-[11px] font-medium text-slate-500">Deadline: Dec 23, 2026 · 11:59 PM (PHT)</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mt-3">Final Project – Laravel-Based Web Management System</h3>
+                    <p class="text-xs text-slate-500 mt-1">ITPFE 1 – Web Systems and Technologies 2 · Build upon your ITPE 130 – Integrative Programming and Technologies 2 final project using the Laravel Framework.</p>
+                    <div class="mt-4 grid gap-4 lg:grid-cols-2">
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                            <p class="text-sm font-semibold text-slate-800">Project Description</p>
+                            <p class="text-xs text-slate-600 mt-2">Students will transform their previously developed final project in <span class="font-semibold">ITPE 130 – Integrative Programming and Technologies 2</span> into a fully functional web-based management system using the Laravel Framework.</p>
+                            <p class="text-xs text-slate-600 mt-2">The project must demonstrate the application of Laravel concepts and techniques discussed in the subject, particularly routing, controllers, models, views, database integration, CRUD operations, and other relevant framework functionalities.</p>
+                            <p class="text-sm font-semibold text-slate-800 mt-4">TASK PROMPT</p>
+                            <ol class="list-decimal pl-5 mt-2 space-y-2 text-xs text-slate-600">
+                                <li><span class="font-semibold text-slate-800">Group Formation:</span> Each group must consist of five (5-6) members.</li>
+                                <li><span class="font-semibold text-slate-800">Organization Selection:</span> Each group must select an organization, institution, or private company as the intended client or beneficiary of their proposed web application.</li>
+                                <li><span class="font-semibold text-slate-800">System Development:</span> Each group must transform its previous ITPE 130 final project into a Laravel-based web management system. The application must address an actual organizational or business need and implement functional management features. A simple static website is not acceptable.</li>
+                                <li><span class="font-semibold text-slate-800">System Requirements:</span> The web application must demonstrate appropriate database integration, CRUD operations, and relevant management functionalities based on the selected organization's requirements. The implementation must utilize the Laravel Framework.</li>
+                                <li><span class="font-semibold text-slate-800">System Screenshots Submission:</span> Each group must upload screenshots of their developed web application to document its implemented features and functionalities. The screenshots must clearly demonstrate the system's user interface, database-driven features, CRUD operations, and other relevant management modules. The final deadline for uploading the screenshots is December 23, 2026.</li>
+                                <li><span class="font-semibold text-slate-800">Project Defense:</span> Each group will be assigned a schedule for its final project presentation and defense on December 21, 2026. All members must participate in presenting and explaining their respective contributions to the project.</li>
+                                <li><span class="font-semibold text-slate-800">Evaluation:</span> Each web application will be evaluated based on the assessment rubric provided by the instructor.</li>
+                            </ol>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 flex-1">
+                                <p class="text-sm font-semibold text-slate-800">Project Evaluation Rubrics</p>
+                                <div class="overflow-x-auto mt-2">
+                                    <table class="w-full min-w-[280px] text-left text-xs border-collapse">
+                                        <thead>
+                                            <tr class="bg-slate-200 text-slate-700 border-b border-slate-300">
+                                                <th class="p-2 font-semibold uppercase tracking-wide text-[11px]">Criteria</th>
+                                                <th class="p-2 font-semibold uppercase tracking-wide text-[11px] text-right">Weight</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-200 bg-white">
+                                            <tr><td class="p-2 text-slate-700">Content</td><td class="p-2 text-right font-mono text-slate-800">25%</td></tr>
+                                            <tr><td class="p-2 text-slate-700">Design</td><td class="p-2 text-right font-mono text-slate-800">25%</td></tr>
+                                            <tr><td class="p-2 text-slate-700">Configurations</td><td class="p-2 text-right font-mono text-slate-800">50%</td></tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr class="bg-brand-50 text-brand-800 font-bold border-t-2 border-brand-200">
+                                                <td class="p-2">TOTAL</td>
+                                                <td class="p-2 text-right font-mono">100%</td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                                <p class="text-sm font-semibold text-amber-900">Foundation</p>
+                                <p class="text-xs text-amber-800 mt-1">This project must build upon your previous <span class="font-semibold">ITPE 130 – Integrative Programming and Technologies 2</span> final project. Do not develop an entirely unrelated system; enhance, migrate, and transform that previous web application into a functional Laravel-based management system.</p>
+                                <p class="text-sm font-semibold text-amber-900 mt-3">Important Dates</p>
+                                <ul class="list-disc pl-5 mt-2 space-y-1 text-xs text-amber-800">
+                                    <li><span class="font-semibold">December 21, 2026</span> – Final Project Presentation and Defense</li>
+                                    <li><span class="font-semibold">December 23, 2026</span> – Final Deadline for System Screenshots Submission</li>
+                                </ul>
+                                <p class="text-xs text-amber-800 mt-3"><span class="font-semibold">Reminder:</span> Ensure that your Laravel-based web application is sufficiently developed and ready for demonstration during the project defense. Upload the required screenshots on or before the submission deadline.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
+                    <a id="finalProjectSubmitBtn" href="https://drive.google.com/drive/folders/1WKwYgMAyQuhL71xjg1ANFLv1r3-xT-Lo?usp=sharing" target="_blank" rel="noopener noreferrer" class="hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold py-2.5 px-5 rounded-xl shadow-md transition text-sm">
+                        Submit Final Project
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5h5v5m0-5l-7 7m7-5a9 9 0 11-2.64-6.36L19 10"></path></svg>
+                    </a>
+                    <p id="finalProjectClosedMessage" aria-live="polite" class="hidden w-full text-sm font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-4 py-2.5">Submission Closed – Deadline Has Passed</p>
+                    <p class="text-[11px] text-slate-500">Submissions are accepted until December 23, 2026 at 11:59 PM (Philippine Standard Time). <span id="finalProjectStatus" class="font-semibold text-emerald-700">Submission Open</span></p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        function tryOpenQuiz1() {
+            window.location.href = "quiz1.html";
+        }
+        function tryOpenQuiz2() {
+            window.location.href = "quiz2.html";
+        }
+        function tryOpenQuiz3() {
+            window.location.href = "quiz3.html";
+        }
+        function currentPHTTime() {
+            return new Intl.DateTimeFormat("en-US", {
+                timeZone: "Asia/Manila",
+                dateStyle: "medium",
+                timeStyle: "medium"
+            }).format(new Date());
+        }
+        const SUBMISSION_TIME_ZONE = "Asia/Manila";
+        function getManilaOffsetMs(utcMs) {
+            const parts = new Intl.DateTimeFormat("en-US", {
+                timeZone: SUBMISSION_TIME_ZONE,
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                fractionalSecondDigits: 3,
+                hour12: false
+            }).formatToParts(new Date(utcMs));
+            const values = {};
+            for (const part of parts) values[part.type] = part.value;
+            const wallAsUtc = Date.UTC(
+                Number(values.year),
+                Number(values.month) - 1,
+                Number(values.day),
+                Number(values.hour === "24" ? 0 : values.hour),
+                Number(values.minute),
+                Number(values.second),
+                Number(values.fractionalSecond || 0)
+            );
+            return wallAsUtc - utcMs;
+        }
+        function getManilaDeadlineMs(year, month, day, hour, minute, second, millisecond) {
+            const wallAsUtc = Date.UTC(year, month, day, hour, minute, second || 0, millisecond || 0);
+            const estimatedUtcMs = wallAsUtc - getManilaOffsetMs(wallAsUtc);
+            return wallAsUtc - getManilaOffsetMs(estimatedUtcMs);
+        }
+        const LAB_DEADLINE_MS = getManilaDeadlineMs(2026, 11, 4, 23, 59, 59, 999);
+        const QUIZ_DEADLINE_MS = LAB_DEADLINE_MS;
+        const FINAL_PROJECT_DEADLINE_MS = getManilaDeadlineMs(2026, 11, 23, 23, 59, 59, 999);
+
+        const SUBMISSION_ITEMS = [
+            { prefix: "quiz1", deadlineMs: QUIZ_DEADLINE_MS },
+            { prefix: "quiz2", deadlineMs: QUIZ_DEADLINE_MS },
+            { prefix: "quiz3", deadlineMs: QUIZ_DEADLINE_MS },
+            { prefix: "lab1", deadlineMs: LAB_DEADLINE_MS },
+            { prefix: "lab2", deadlineMs: LAB_DEADLINE_MS },
+            { prefix: "lab3", deadlineMs: LAB_DEADLINE_MS },
+            { prefix: "lab4", deadlineMs: LAB_DEADLINE_MS },
+            { prefix: "lab5", deadlineMs: LAB_DEADLINE_MS },
+            { prefix: "lab6", deadlineMs: LAB_DEADLINE_MS },
+            { prefix: "finalProject", deadlineMs: FINAL_PROJECT_DEADLINE_MS }
+        ];
+        function updateSubmissionStatuses() {
+            const nowMs = new Date().getTime();
+            for (const item of SUBMISSION_ITEMS) {
+                const ended = nowMs > item.deadlineMs;
+                const button = document.getElementById(item.prefix + "SubmitBtn") || document.getElementById(item.prefix + "StartBtn");
+                const closedMessage = document.getElementById(item.prefix + "ClosedMessage");
+                const status = document.getElementById(item.prefix + "Status");
+                if (button) button.classList.toggle("hidden", ended);
+                if (closedMessage) {
+                    closedMessage.classList.toggle("hidden", !ended);
+                    if (ended) closedMessage.title = "Current PHT time: " + currentPHTTime();
+                }
+                if (status) {
+                    status.textContent = ended ? "Submission Closed" : (item.openLabel || "Submission Open");
+                    status.classList.toggle("text-emerald-700", !ended && !item.openLabel);
+                    status.classList.toggle("text-slate-500", !ended && !!item.openLabel);
+                    status.classList.toggle("text-rose-700", ended);
+                }
+            }
+        }
+        updateSubmissionStatuses();
+        setInterval(updateSubmissionStatuses, 1000);
+
+        (function () {
+            document.addEventListener("contextmenu", (e) => e.preventDefault());
+            document.addEventListener("keydown", (e) => {
+                const key = String(e.key || "").toLowerCase();
+                const mod = e.ctrlKey || e.metaKey;
+                if (e.key === "F12" || e.key === "PrintScreen") {
+                    e.preventDefault();
+                    return;
+                }
+                if (mod && key === "u") {
+                    e.preventDefault();
+                    return;
+                }
+                if (mod && e.shiftKey && ["i", "j", "c", "k", "u"].includes(key)) {
+                    e.preventDefault();
+                    return;
+                }
+                if (mod && e.altKey && ["i", "j", "c", "u"].includes(key)) {
+                    e.preventDefault();
+                    return;
+                }
+                if (mod && ["s", "p"].includes(key)) {
+                    e.preventDefault();
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
